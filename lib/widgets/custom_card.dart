@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shoptopia/models/product_model.dart';
 import 'package:shoptopia/pages/product_page.dart';
-import 'package:shoptopia/pages/update_product_for_admin_page.dart';
 
 class CustomCard extends StatelessWidget {
   ProductModel productModel;
@@ -21,7 +20,7 @@ class CustomCard extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           Container(
-            decoration: BoxDecoration(boxShadow: [
+            decoration: const BoxDecoration(boxShadow: [
               BoxShadow(
                 blurRadius: 50,
                 color: Colors.white,
@@ -42,12 +41,12 @@ class CustomCard extends StatelessWidget {
                   children: [
                     Text(
                       productModel.title.substring(0, 8),
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.grey,
                         fontSize: 16,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 2.5,
                     ),
                     Row(
@@ -55,12 +54,12 @@ class CustomCard extends StatelessWidget {
                       children: [
                         Text(
                           '\$${productModel.price.toString()}',
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.black,
                             fontSize: 16,
                           ),
                         ),
-                        Icon(
+                        const Icon(
                           Icons.favorite_outline,
                           color: Colors.red,
                         )

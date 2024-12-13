@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shoptopia/cubits/get_all_products_cubit/get_all_products_cubit.dart';
 import 'package:shoptopia/pages/account_page.dart';
-import 'package:shoptopia/pages/cart_page.dart';
 import 'package:shoptopia/pages/favorites_page.dart';
 import 'package:shoptopia/pages/home_page.dart';
 import 'package:shoptopia/pages/search_page.dart';
@@ -13,14 +14,20 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int _selectedIndex = 0;
+  static late List<Widget> _pages;
 
-  static List<Widget> _pages = [
-    HomePage(),
-    SearchPage(),
-    CartPage(),
-    FavoritesPage(),
-    AccountPage(),
-  ];
+  @override
+  void initState() {
+    super.initState();
+    BlocProvider.of<GetAllProductsCubit>(context).getAllProducts();
+
+    _pages = [
+      HomePage(),
+      const SearchPage(),
+      const FavoritesPage(),
+      const AccountPage(),
+    ];
+  }
 
   void _onItemTapped(int index) {
     setState(() {
@@ -35,7 +42,7 @@ class _MainPageState extends State<MainPage> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
@@ -43,10 +50,6 @@ class _MainPageState extends State<MainPage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
             label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart_checkout),
-            label: 'Cart',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
