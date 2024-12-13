@@ -7,7 +7,6 @@ Shoptopia is a sleek, Flutter-based e-commerce prototype designed to showcase a 
 - **Product Showcase**: Browse a variety of products displayed in cards with images, names, prices, and a "love" icon to add to favorites.
 - **Product Details**: Tap on any product to view detailed information, with options to:
   - **Add to Cart** (future functionality)
-  - **Add to Favorites** (future functionality)
 
 - **Bottom Navigation**:
   - **Home**: Displays the list of products.
@@ -44,7 +43,7 @@ Shoptopia is a sleek, Flutter-based e-commerce prototype designed to showcase a 
 
 ## Demo Video
 
-https://github.com/user-attachments/assets/fdd87005-bec0-46b2-b43a-1b0bbf69dc4d
+https://github.com/user-attachments/assets/ea0db735-0ef1-4962-9c59-a029ba4d9830
 
 ## Future Enhancements
 
